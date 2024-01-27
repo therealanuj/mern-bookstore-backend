@@ -59,11 +59,11 @@ async function run() {
 
         app.get("/all-verified-books", async (req, res) => {
             let query = { status: "verified" };
-            console.log(query);
+            //console.log(query);
             if (req.query?.category) {
                 query = { ...query, category: req.query.category };
             }
-            console.log(query);
+            //console.log(query);
             const result = await bookCollections.find(query).toArray();
             res.send(result);
         })
